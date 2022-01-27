@@ -1,0 +1,72 @@
+id, name, password, remarks, username, address, email, mobile
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <u>
+                <h1 class="row justify-content-center">Registration</h1>
+            </u>
+            <div class="form mt-5">
+                <form (ngSubmit)='isSave? addUser():updateUser()'>
+                    <div class="form-group mt-3">
+                        Name :
+                        <input class="form-control" type="text" id="name" name="name" placeholder="Type Employee Name"
+                     [(ngModel)]="signup.name"    >
+                    </div>
+					<div class="form-group mt-3">
+                        Username :
+                        <input class="form-control" type="text" id="username" name="username"
+                            placeholder="Enter Username" [(ngModel)]="signup.username"    >
+                    </div>
+					<div class="form-group mt-3">
+                        Password :
+                        <input class="form-control" type="text" id="password" name="password"
+                            placeholder="Enter Password" [(ngModel)]="signup.password"    >
+                    </div>
+					<div class="form-group mt-3">
+                        Remarks :
+                        <textarea class="form-control" name="remarks" id="remarks" [(ngModel)]="signup.remarks"
+                            ></textarea>
+                    </div>
+					
+					
+					
+
+                    <div>
+                        <a class="btn btn-success float-end mt-4" href="login" type="submit" >{{isSave? 'Submit' : 'Update'}}</a>
+                        <button class="btn btn-danger mt-4" type="reset" (click)="resetForm()">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="table mt-3">
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>Employee Name</th>
+                        <th>Employee Username</th>
+                        <th>Employee Password</th>
+                        <th>Employee Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of signups; index as i;">
+                        <td>{{i+1}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.username}}</td>
+                        <td>{{emp.password}}</td>
+                        <td>{{emp.remarks}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="editUser(i)">Edit</button>
+                            ||
+                            <button class=" btn btn-danger" (click)="deleteUser(i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div> -->
+    </div>
+</div>
+
